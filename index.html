@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Birthday Surprise! For Barsha 🎂🎁🎈 </title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Poppins:wght@300;400;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 6s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 30px;
+      padding: 50px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.2), 
+                  0 0 0 1px rgba(255,255,255,0.1),
+                  inset 0 1px 0 rgba(255,255,255,0.3);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.2);
+      max-width: 700px;
+      position: relative;
+      transform: scale(0);
+      animation: popIn 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s forwards;
+    }
+
+    @keyframes popIn {
+      to { transform: scale(1); }
+    }
+
+    .surprise-btn {
+      background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #4ecdc4);
+      background-size: 300% 300%;
+      border: none;
+      color: white;
+      padding: 20px 45px;
+      font-size: 22px;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 20px 40px rgba(255, 107, 107, 0.4),
+                  0 0 20px rgba(255, 107, 107, 0.2);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-weight: 700;
+      margin: 25px 0;
+      position: relative;
+      overflow: hidden;
+      animation: rainbowPulse 4s infinite, buttonFloat 3s ease-in-out infinite;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-family: 'Fredoka One', cursive;
+    }
+
+    @keyframes rainbowPulse {
+      0%, 100% { background-position: 0% 50%; }
+      25% { background-position: 100% 50%; }
+      50% { background-position: 200% 50%; }
+      75% { background-position: 300% 50%; }
+    }
+
+    @keyframes buttonFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .surprise-btn:hover {
+      transform: translateY(-15px) scale(1.1);
+      box-shadow: 0 30px 60px rgba(255, 107, 107, 0.6), 
+                  0 0 50px rgba(255, 107, 107, 0.4),
+                  0 0 100px rgba(255, 107, 107, 0.2);
+      animation-play-state: paused;
+    }
+
+    .surprise-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+      transition: left 0.6s;
+    }
+
+    .surprise-btn:hover::before {
+      left: 100%;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .birthday-message {
+      animation: slideIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(50px) rotateX(30deg); }
+      to { opacity: 1; transform: translateY(0) rotateX(0deg); }
+    }
+
+    .birthday-title {
+      font-size: 3.5em;
+      background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 30px 0;
+      text-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      animation: bounce 2s infinite, textGlow 3s ease-in-out infinite alternate;
+      font-family: 'Fredoka One', cursive;
+      font-weight: 400;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-20px); }
+      60% { transform: translateY(-10px); }
+    }
+
+    @keyframes textGlow {
+      0% { filter: drop-shadow(0 0 5px rgba(255, 107, 107, 0.5)); }
+      100% { filter: drop-shadow(0 0 20px rgba(255, 107, 107, 0.8)); }
+    }
+
+    .initial-title {
+      font-size: 2.8em;
+      color: white;
+      margin-bottom: 30px;
+      font-family: 'Fredoka One', cursive;
+      animation: titlePulse 2s ease-in-out infinite;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.3);
+      filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+    }
+    
+    .initial-title .gift-icon {
+      background: linear-gradient(45deg, #feca57, #ff9ff3, #4ecdc4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+      animation: giftBounce 2s ease-in-out infinite;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+    
+    @keyframes giftBounce {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.2) rotate(10deg); }
+    }
+
+    @keyframes titlePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .message-text {
+      font-size: 1.3em;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.8;
+      margin: 25px 0;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      font-weight: 300;
+    }
+
+    .initial-text {
+      font-size: 1.4em;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 30px;
+      font-weight: 300;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .wishes {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 30px;
+      border-radius: 20px;
+      margin: 30px 0;
+      font-size: 1.15em;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: wishesGlow 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes wishesGlow {
+      0% { box-shadow: 0 10px 30px rgba(0,0,0,0.2), 0 0 20px rgba(255, 255, 255, 0.1); }
+      100% { box-shadow: 0 15px 40px rgba(0,0,0,0.3), 0 0 30px rgba(255, 255, 255, 0.2); }
+    }
+
+    .wishes h3 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      background: linear-gradient(45deg, #feca57, #ff9ff3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cake {
+      font-size: 5em;
+      margin: 25px 0;
+      animation: wiggle 2s ease-in-out infinite, cakeGlow 3s ease-in-out infinite alternate;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-8deg); }
+      75% { transform: rotate(8deg); }
+    }
+
+    @keyframes cakeGlow {
+      0% { filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)); }
+      100% { filter: drop-shadow(0 15px 30px rgba(255, 193, 7, 0.4)); }
+    }
+
+    .top-right-img {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 0 4px rgba(255,255,255,0.3);
+      border: 3px solid rgba(255,255,255,0.5);
+      z-index: 10;
+      animation: fadeInZoom 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards, imageFloat 4s ease-in-out infinite;
+      opacity: 0;
+    }
+
+    @keyframes fadeInZoom {
+      0% { opacity: 0; transform: scale(0.3) rotate(-180deg); }
+      100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+
+    @keyframes imageFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      opacity: 0.9;
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    @keyframes confettiFall {
+      0% { transform: translateY(-20px) rotate(0deg) scale(1); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg) scale(0.3); opacity: 0; }
+    }
+
+    .heart {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background: #ff6b6b;
+      transform: rotate(45deg);
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+      z-index: 5;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    }
+    
+    .heart::before, .heart::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background: #ff6b6b;
+      border-radius: 50%;
+    }
+    
+    .heart::before {
+      top: -12px;
+      left: 0;
+    }
+    
+    .heart::after {
+      left: -12px;
+      top: 0;
+    }
+    
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(45deg) scale(0.5); opacity: 0.8; }
+      50% { transform: translateY(-50vh) rotate(45deg) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(45deg) scale(0.3); opacity: 0; }
+    }
+
+    .song-text {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 30px 0;
+      font-size: 1.2em;
+      color: rgba(255, 255, 255, 0.9);
+      font-style: italic;
+      animation: musicNote 3s ease-in-out infinite;
+    }
+
+    @keyframes musicNote {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.02) rotate(1deg); }
+    }
+
+    .footer-message {
+      margin-top: 40px;
+      font-size: 1.2em;
+      color: rgba(255, 255, 255, 0.8);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: 300;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      animation: sparkle 2s linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(0); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+
+    /* FIREWORKS STYLES */
+    .firework {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .firework-spark {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    @keyframes fireworkLaunch {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-60vh) scale(0.8);
+        opacity: 0.8;
+      }
+    }
+
+    @keyframes fireworkExplode {
+      0% {
+        transform: scale(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+
+    .firework-trail {
+      position: absolute;
+      width: 3px;
+      height: 20px;
+      border-radius: 50%;
+      z-index: 999;
+      pointer-events: none;
+      animation: trailFade 1s ease-out forwards;
+    }
+
+    @keyframes trailFade {
+      0% {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scaleY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 30px;
+        margin: 20px;
+      }
+      
+      .birthday-title {
+        font-size: 2.5em;
+      }
+      
+      .initial-title {
+        font-size: 2em;
+      }
+      
+      .top-right-img {
+        width: 80px;
+        height: 80px;
+        top: 15px;
+        right: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="initial-screen">
+      <h1 class="initial-title"><span class="gift-icon">🎁</span> Hello Barsha!! Hariom Wants to Surprise You! <span class="gift-icon">🎁</span></h1>
+      <p class="initial-text">Click the button below to reveal your birthday surprise!</p>
+      <button class="surprise-btn" onclick="revealSurprise()">🎉 CLICK ME!🎉 </button>
+    </div>
+
+    <div id="birthday-surprise" class="hidden">
+      <img id="top-image"
+           src="https://i.ibb.co/TqNyqVrw/IMG-20250707-085310.jpg" 
+           alt="Top Right Image" 
+           class="top-right-img hidden"
+           onerror="this.onerror=null;this.src='https://placehold.co/100x100/ff6b6b/ffffff?text=Image'">
+
+      <div class="birthday-message">
+        <h1 class="birthday-title"> 🎊HAPPY BIRTHDAY DEAR BARSHA!!🎊 </h1>
+        <div class="cake">🎂</div>
+        <div class="message-text">
+          <p>🌟 Another year of amazing memories and wonderful moments!🌟 </p>
+        </div>
+        <div class="wishes">
+          <h3> 🎈Birthday Wishes For You🎈 </h3>
+          <p>May your day be filled with happiness, your year with joy, life with love! 
+             May all your dreams come true and may you always find reasons to smile. 
+             Here's to another year of adventures, laughter, and beautiful memories! Mahakal bless You😇 </p>
+        </div>
+        <div class="song-text">
+          <p> <em>Happy Birthday to you! Happy Birthday to you! Happy Birthday dear bestie! Happy Birthday to you!</em> </p>
+        </div>
+        <div class=''birthday-card">
+        	<a href="https://ibb.co/gbZgz5CN"><img src="https://i.ibb.co/Q7vmr2GL/file-00000000fc5461f8aca616fe1b816721.png" alt="file-00000000fc5461f8aca616fe1b816721" border="0" width="200";height="300"></a>
+</div>
+<button class="surprise-btn" onclick="createConfetti()" style="background: linear-gradient(45deg, #4ecdc4, #45b7d1, #96ceb4); margin-top: 30px;">
+           MORE CONFETTI! 
+        </button>
+        <div class="footer-message">
+          <p>~ With lots of love and best wishes from Hariom! </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // This function is called when the main "CLICK ME" button is clicked.
+    function revealSurprise() {
+      // Hide the initial screen
+      document.getElementById('initial-screen').style.display = 'none';
+      // Show the main birthday message
+      document.getElementById('birthday-surprise').classList.remove('hidden');
+      document.getElementById('top-image').classList.remove('hidden');
+      
+      // Launch fireworks immediately for a big impact!
+      createFireworks();
+      
+      // After a short delay, trigger other visual effects
+      setTimeout(() => {
+        createConfetti();
+        createHearts();
+        createSparkles();
+      }, 1000);
+    }
+
+    // This function creates the firework effects
+    function createFireworks() {
+      const fireworkColors = [
+        '#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', 
+        '#feca57', '#ff9ff3', '#667eea', '#764ba2',
+        '#f093fb', '#f5576c', '#4facfe', '#00d4ff'
+      ];
+
+      // Create multiple fireworks with different timings for a staggered effect
+      for (let i = 0; i < 8; i++) {
+        setTimeout(() => {
+          launchFirework(fireworkColors);
+        }, i * 400);
+      }
+
+      // Create a grand finale after a few seconds
+      setTimeout(() => {
+        for (let i = 0; i < 5; i++) {
+          setTimeout(() => {
+            launchFirework(fireworkColors, true);
+          }, i * 200);
+        }
+      }, 3000);
+    }
+
+    // This function launches a single firework rocket
+    function launchFirework(colors, isGrandFinale = false) {
+      const startX = Math.random() * window.innerWidth;
+      const startY = window.innerHeight;
+      const explodeX = Math.random() * window.innerWidth;
+      const explodeY = Math.random() * (window.innerHeight * 0.4) + 100;
+      
+      // Create the firework rocket element
+      const rocket = document.createElement('div');
+      rocket.className = 'firework';
+      rocket.style.left = startX + 'px';
+      rocket.style.top = startY + 'px';
+      const rocketColor = colors[Math.floor(Math.random() * colors.length)];
+      rocket.style.background = rocketColor;
+      rocket.style.boxShadow = `0 0 20px ${rocketColor}`;
+      document.body.appendChild(rocket);
+
+      // Create trailing sparks as the rocket flies
+      const trailInterval = setInterval(() => {
+        const trail = document.createElement('div');
+        trail.className = 'firework-trail';
+        trail.style.left = rocket.offsetLeft + 'px';
+        trail.style.top = rocket.offsetTop + 'px';
+        trail.style.background = colors[Math.floor(Math.random() * colors.length)];
+        document.body.appendChild(trail);
+        setTimeout(() => trail.remove(), 1000);
+      }, 50);
+
+      // Animate the rocket's flight to the explosion point
+      rocket.style.transition = 'all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      rocket.style.left = explodeX + 'px';
+      rocket.style.top = explodeY + 'px';
+
+      // When the rocket reaches its destination, make it explode
+      setTimeout(() => {
+        clearInterval(trailInterval);
+        rocket.remove();
+        explodeFirework(explodeX, explodeY, colors, isGrandFinale);
+      }, 1500);
+    }
+
+    // This function creates the firework explosion effect
+    function explodeFirework(x, y, colors, isGrandFinale = false) {
+      const sparkCount = isGrandFinale ? 50 : 30;
+      const sparkColors = colors.slice();
+      
+      for (let i = 0; i < sparkCount; i++) {
+        const spark = document.createElement('div');
+        spark.className = 'firework-spark';
+        spark.style.left = x + 'px';
+        spark.style.top = y + 'px';
+        
+        const color = sparkColors[Math.floor(Math.random() * sparkColors.length)];
+        spark.style.background = color;
+        spark.style.boxShadow = `0 0 10px ${color}`;
+        
+        // Calculate a random direction and distance for each spark
+        const angle = (Math.PI * 2 * i) / sparkCount;
+        const velocity = isGrandFinale ? 
+          Math.random() * 250 + 150 : 
+          Math.random() * 180 + 100;
+        
+        const deltaX = Math.cos(angle) * velocity;
+        const deltaY = Math.sin(angle) * velocity;
+        
+        spark.style.transition = `all ${Math.random() * 1.5 + 1.5}s cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+        
+        document.body.appendChild(spark);
+        
+        // Animate the spark explosion outwards
+        setTimeout(() => {
+          spark.style.left = (x + deltaX) + 'px';
+          spark.style.top = (y + deltaY + Math.random() * 100) + 'px'; // Add some gravity
+          spark.style.opacity = '0';
+          spark.style.transform = 'scale(0)';
+        }, 50);
+        
+        // Create secondary "crackling" sparkles for some fireworks
+        if (Math.random() < 0.3) {
+          setTimeout(() => {
+            createSecondarySparkle(x + deltaX * 0.7, y + deltaY * 0.7, color);
+          }, Math.random() * 1000 + 500);
+        }
+        
+        // Remove the spark from the page after its animation
+        setTimeout(() => spark.remove(), 3000);
+      }
+      
+      // Add a bright flash at the center of the explosion
+      createExplosionFlash(x, y, isGrandFinale);
+    }
+
+    // Creates smaller, secondary crackling sparkles
+    function createSecondarySparkle(x, y, color) {
+      for (let i = 0; i < 8; i++) {
+        const miniSpark = document.createElement('div');
+        miniSpark.className = 'firework-spark';
+        miniSpark.style.left = x + 'px';
+        miniSpark.style.top = y + 'px';
+        miniSpark.style.width = '2px';
+        miniSpark.style.height = '2px';
+        miniSpark.style.background = color;
+        miniSpark.style.boxShadow = `0 0 5px ${color}`;
+        
+        const angle = (Math.PI * 2 * i) / 8;
+        const distance = Math.random() * 50 + 30;
+        const deltaX = Math.cos(angle) * distance;
+        const deltaY = Math.sin(angle) * distance;
+        
+        miniSpark.style.transition = 'all 1s ease-out';
+        document.body.appendChild(miniSpark);
+        
+        setTimeout(() => {
+          miniSpark.style.left = (x + deltaX) + 'px';
+          miniSpark.style.top = (y + deltaY) + 'px';
+          miniSpark.style.opacity = '0';
+          miniSpark.style.transform = 'scale(0)';
+        }, 50);
+        
+        setTimeout(() => miniSpark.remove(), 1000);
+      }
+    }
+
+    // Creates the bright flash for a firework explosion
+    function createExplosionFlash(x, y, isGrandFinale = false) {
+      const flash = document.createElement('div');
+      flash.style.position = 'absolute';
+      flash.style.left = (x - 50) + 'px';
+      flash.style.top = (y - 50) + 'px';
+      flash.style.width = '100px';
+      flash.style.height = '100px';
+      flash.style.borderRadius = '50%';
+      flash.style.background = isGrandFinale ? 
+        'radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.3) 50%, transparent 100%)' :
+        'radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 50%, transparent 100%)';
+      flash.style.transform = 'scale(0)';
+      flash.style.transition = 'all 0.3s ease-out';
+      flash.style.pointerEvents = 'none';
+      flash.style.zIndex = '1001';
+      
+      document.body.appendChild(flash);
+      
+      setTimeout(() => {
+        flash.style.transform = isGrandFinale ? 'scale(3)' : 'scale(2)';
+        flash.style.opacity = '0';
+      }, 50);
+      
+      setTimeout(() => flash.remove(), 300);
+    }
+
+    // Creates the falling confetti effect
+    function createConfetti() {
+      const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#667eea', '#764ba2'];
+      for (let i = 0; i < 80; i++) {
+        setTimeout(() => {
+          const confetti = document.createElement('div');
+          confetti.className = 'confetti';
+          confetti.style.left = Math.random() * 100 + '%';
+          confetti.style.top = '-30px';
+          confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.animation = `confettiFall ${Math.random() * 3 + 2}s linear forwards`;
+          confetti.style.animationDelay = Math.random() * 2 + 's';
+          document.body.appendChild(confetti);
+          setTimeout(() => confetti.remove(), 6000);
+        }, i * 50);
+      }
+    }
+
+    // Creates floating heart effects
+    function createHearts() {
+      const heartColors = ['#ff6b6b', '#feca57', '#ff9ff3', '#f093fb'];
+      for (let i = 0; i < 20; i++) {
+        setTimeout(() => {
+          const heart = document.createElement('div');
+          heart.className = 'heart';
+          heart.style.left = Math.random() * 100 + 'vw';
+          heart.style.bottom = '-30px';
+          const color = heartColors[Math.floor(Math.random() * heartColors.length)];
+          heart.style.background = color;
+          // Custom property for pseudo-elements to inherit color
+          heart.style.setProperty('--heart-color', color); 
+          const size = Math.random() * 15 + 15;
+          heart.style.width = heart.style.height = size + 'px';
+          heart.style.animationDelay = Math.random() * 4 + 's';
+          document.body.appendChild(heart);
+          setTimeout(() => heart.remove(), 8000);
+        }, i * 400);
+      }
+    }
+
+    // Creates twinkling sparkle effects across the screen
+    function createSparkles() {
+      for (let i = 0; i < 30; i++) {
+        setTimeout(() => {
+          const sparkle = document.createElement('div');
+          sparkle.className = 'sparkle';
+          sparkle.style.left = Math.random() * 100 + '%';
+          sparkle.style.top = Math.random() * 100 + '%';
+          sparkle.style.animationDelay = Math.random() * 2 + 's';
+          document.body.appendChild(sparkle);
+          setTimeout(() => sparkle.remove(), 4000);
+        }, i * 200);
+      }
+    }
+
+    // Auto-create sparkles periodically after the surprise is revealed
+    setInterval(() => {
+      if (!document.getElementById('birthday-surprise').classList.contains('hidden')) {
+        createSparkles();
+      }
+    }, 3000);
+  </script>
+</body>
+</html>
